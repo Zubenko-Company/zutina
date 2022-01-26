@@ -1,14 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-
-const App = () => (
-  <View style={styles.container}>
-    <Text>Open up App.tsx to start working on your app!</Text>
-    <StatusBar style="auto" />
-  </View>
-);
-
-export default App;
+import { Provider } from 'react-redux';
+import { TestListViewConnected } from './src/components/tests/testList';
+import { store } from './src/redux/store';
 
 const styles = StyleSheet.create({
   container: {
@@ -18,3 +12,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const App = () => (
+  <Provider store={store}>
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <StatusBar style="auto" />
+      <TestListViewConnected />
+    </View>
+  </Provider>
+);
+
+export default App;
