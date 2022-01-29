@@ -1,7 +1,7 @@
+import { uploadTest } from '@Reducers/tests';
+import { RootState } from '@Store';
 import { Button, StyleSheet, View } from 'react-native';
 import { connect, ConnectedProps } from 'react-redux';
-import { uploadTest } from '../../redux/reducers/tests/tests';
-import { RootState } from '../../redux/store';
 import { TestView } from './test';
 
 const s = StyleSheet.create({
@@ -29,9 +29,9 @@ const mapStateToProps = (store: RootState) => ({
   tests: store.tests.tests,
 });
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = {
   addTest: uploadTest,
-});
+};
 
 const connector = connect(mapStateToProps, mapDispatchToProps);
 

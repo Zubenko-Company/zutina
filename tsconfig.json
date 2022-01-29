@@ -1,6 +1,17 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
+    "strict": true,
+    "baseUrl": "src",
+    "paths": {
+      "@Api/*": ["api/*"],
+      "@Components/*": ["components/*"],
+      "@Constants/*": ["constants/*"],
+      "@Navigation/*": ["navigation/*"],
+      "@Reducers/*": ["redux/reducers/*"],
+      "@Sagas/*": ["redux/sagas/*"],
+      "@Selectors/*": ["redux/selectors/*"],
+      "@Store": ["redux/store.ts"]
+    }
   }
 }

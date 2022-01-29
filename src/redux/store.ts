@@ -1,5 +1,5 @@
+import { tests } from '@Reducers/tests';
 import { configureStore } from '@reduxjs/toolkit';
-import { tests } from './reducers/tests/tests';
 
 export const store = configureStore({
   reducer: {

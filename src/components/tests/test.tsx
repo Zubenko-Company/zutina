@@ -1,5 +1,5 @@
+import { Test } from '@Reducers/tests';
 import { StyleSheet, Text, View } from 'react-native';
-import { Test } from '../../redux/reducers/tests/tests';
 
 const s = StyleSheet.create({
   container: {
