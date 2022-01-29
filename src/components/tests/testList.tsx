@@ -1,7 +1,7 @@
 import { Button, StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Test, uploadTest } from '../../redux/reducers/tests/tests';
-import { RootState, AppDispatch } from '../../redux/store';
+import { RootState } from '../../redux/store';
 import { TestView } from './test';
 
 const s = StyleSheet.create({
