@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/ramda": "^0.27.64",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
