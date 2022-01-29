@@ -1,6 +1,6 @@
 import { Button, StyleSheet, View } from 'react-native';
-import { connect } from 'react-redux';
-import { Test, uploadTest } from '../../redux/reducers/tests/tests';
+import { connect, ConnectedProps } from 'react-redux';
+import { uploadTest } from '../../redux/reducers/tests/tests';
 import { RootState } from '../../redux/store';
 import { TestView } from './test';
 
@@ -9,11 +9,6 @@ const s = StyleSheet.create({
     backgroundColor: 'red',
   },
 });
-
-interface TestListProps {
-  tests: Array<Test>;
-  addTest: (t: Test) => void;
-}
 
 export const TestListView: React.FC<TestListProps> = ({ tests, addTest }) => {
   const addPredefinedTest = () => {
@@ -34,6 +29,12 @@ const mapStateToProps = (store: RootState) => ({
   tests: store.tests.tests,
 });
 
-export const TestListViewConnected = connect(mapStateToProps, { addTest: uploadTest })(
-  TestListView
-);
+const mapDispatchToProps = () => ({
+  addTest: uploadTest,
+});
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type TestListProps = ConnectedProps<typeof connector>;
+
+export const TestListViewConnected = connector(TestListView);
