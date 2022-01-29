@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { TestListViewConnected } from './src/components/tests/testList';
 import { store } from './src/redux/store';
 
-const styles = StyleSheet.create({
+const s = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 
 const App = () => (
   <Provider store={store}>
-    <View style={styles.container}>
+    <View style={s.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
       <TestListViewConnected />

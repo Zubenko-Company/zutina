@@ -1,7 +1,7 @@
 import { Button, StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Test, uploadTest } from '../../redux/reducers/tests/tests';
-import { RootState } from '../../redux/store';
+import { RootState, AppDispatch } from '../../redux/store';
 import { TestView } from './test';
 
 const s = StyleSheet.create({
@@ -22,8 +22,8 @@ export const TestListView: React.FC<TestListProps> = ({ tests, addTest }) => {
 
   return (
     <View style={s.container}>
-      {tests.map((t) => (
-        <TestView test={t} />
+      {tests.map((t, i) => (
+        <TestView test={t} key={i} />
       ))}
       <Button onPress={addPredefinedTest} title="sis" />
     </View>

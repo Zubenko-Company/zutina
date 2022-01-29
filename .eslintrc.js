@@ -2,15 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    'react-native/react-native': true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
-    'prettier',
-    'prettier/react',
-  ],
+  extends: ['plugin:react/recommended', 'google', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,6 +12,9 @@ module.exports = {
     ecmaVersion: 13,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-native'],
-  rules: {},
+  plugins: ['react', 'react-native', '@typescript-eslint'],
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+  },
 };
