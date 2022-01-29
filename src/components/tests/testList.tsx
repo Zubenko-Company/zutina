@@ -1,14 +1,8 @@
 import { uploadTest } from '@Reducers/tests';
 import { RootState } from '@Store';
-import { Button, StyleSheet, View } from 'react-native';
+import { Button, View } from 'react-native';
 import { connect, ConnectedProps } from 'react-redux';
 import { TestView } from './test';
-
-const s = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
-  },
-});
 
 export const TestListView: React.FC<TestListProps> = ({ tests, addTest }) => {
   const addPredefinedTest = () => {
@@ -16,7 +10,7 @@ export const TestListView: React.FC<TestListProps> = ({ tests, addTest }) => {
   };
 
   return (
-    <View style={s.container}>
+    <View>
       {tests.map((t, i) => (
         <TestView test={t} key={i} />
       ))}
